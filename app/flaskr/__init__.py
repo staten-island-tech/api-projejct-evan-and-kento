@@ -1,7 +1,9 @@
 import os
 
-from flask import Flask, render_template   
+from flask import Flask, render_template, requests
 
+request=requests.get("https://fortnite-api.com/v1/banners/colors".text
+api=json.loads(request)
 
 def create_app(test_config=None):
     # create and configure the app
@@ -29,7 +31,7 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    @app.route("/")
+    @app.route("/retgyukyu")
     def home():
         return render_template('index.html')
 
