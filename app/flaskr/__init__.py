@@ -1,6 +1,8 @@
+import json
 import os
 
-from flask import Flask, render_template   
+import requests
+from flask import Flask, render_template, request
 
 
 def create_app(test_config=None):
@@ -29,11 +31,17 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    @app.route("/")
+    @app.route('/', methods=('GET', 'POST'))
     def home():
+        request=requests.get('https://fortnite-api.com/v2/shop/br').text
+        api=json.loads(request)
         return render_template('index.html')
 
-
+    @app.route('/', methods=('GET', 'POST'))
+    def getPost():
+        request=requests.get("https://fortnite-api.com/v1/banners/colors").text
+        api=json.loads(request)
+        return render_template('test.html',api=api)
     return app
-    
+
     
