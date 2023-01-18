@@ -37,11 +37,11 @@ def create_app(test_config=None):
         api=json.loads(request)
         return render_template('index.html')
 
-    @app.route('/', methods=('GET', 'POST'))
+    @app.route('/a', methods=('GET', 'POST'))
     def getPost():
-        request=requests.get("https://fortnite-api.com/v1/banners/colors").text
-        api=json.loads(request)
-        return render_template('test.html',api=api)
+        request=requests.get("https://fortnite-api.com/v1/banners/colors").json()
+        print(request)
+        return render_template('test.html', request=request)
     return app
 
     
