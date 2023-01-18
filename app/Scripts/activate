@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Evan.Yegorov\Desktop\Github Repos\pokededx-project-EvanY0\api-projejct-evan-and-kento\app"
+VIRTUAL_ENV="C:\Users\kento.chalmers\Documents\GitHub\api-projejct-evan-and-kento\app"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
