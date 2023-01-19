@@ -39,9 +39,10 @@ def create_app(test_config=None):
 
     @app.route('/', methods=('GET', 'POST'))
     def getPost():
-        request=requests.get("https://fortnite-api.com/v1/banners/colors").text
-        api=json.loads(request)
-        return render_template('test.html',api=api)
+        URL = "https://fortnite-api.com/v2/cosmetics/br"
+        queryURL = URL + f"?username"
+        response=requests.get(URL)
+
     return app
 
     
